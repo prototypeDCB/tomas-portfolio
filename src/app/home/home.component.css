@@ -26,6 +26,7 @@
     align-items: center;
     width: 100vw;
     height: 110px;
+    z-index: 22;
 }
 
 #home-header {
@@ -36,11 +37,18 @@
     height: 50px;
 }
 
+#home-header-container.alternative {
+    color: var(--jet);
+    background-color: white;
+    z-index: 50;
+}
+
 #home-header-title {
     font-size: 2em;
     font-weight: 600;
     transition: all 0.3s ease;
 }
+
 #home-header-title a {
     color: white;
     text-decoration: none;
@@ -70,6 +78,7 @@
     color: white;
     text-decoration: none;
 }
+
 .nav-underline {
     width: 0;
     height: 1px;
@@ -153,7 +162,6 @@
 
 #subtitle-container {
     width: 100vw;
-    height: 50vh;
     background-color: var(--platinum);
     display: flex;
     justify-content: center;
@@ -166,14 +174,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    padding-top: 30px;
+    padding: 30px 0;
 }
 
 .subtitle-statement {
     width: 40vw;
     font-size: 1.7em;
     color: var(--jet);
-    font-weight: 300;
+    font-weight: 200;
 }
 
 #bio-container {
@@ -183,6 +191,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 #bio-container-scroll-marker {
     position: relative;
     top: -70px;
@@ -192,6 +201,7 @@
     width: 85vw;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 100px;
 }
@@ -209,8 +219,8 @@
 }
 
 .bio-image-container {
-    width: 540px;
-    height: 540px;
+    width: 37.5vw;
+    height: 37.5vw;
     background-color: var(--jet);
     background-position: center;
     background-repeat: no-repeat;
@@ -247,13 +257,12 @@
     width: 100vw;
     display: flex;
     flex-direction: row;
-    height: 500px;
     overflow-x: scroll;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-padding: 25vw;
     margin-top: 70px;
     -webkit-overflow-scrolling: touch;
-
 }
 
 .image-container {
@@ -263,13 +272,12 @@
     background-color: var(--jet);
     color: white;
     transition: all 0.5s ease;
-    scroll-snap-align: end;
+    scroll-snap-align: center;
     justify-content: center;
     margin: 0 50px;
     cursor: pointer;
     border: 5px solid white;
     box-sizing: border-box;
-
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-position: center center;
@@ -279,38 +287,38 @@
     background-size: cover;
 }
 
-
 .image-container a {
     color: white;
     text-decoration: none;
 }
+
 .image-container a:hover {
     color: white;
 }
 
 .image-cover {
     position: relative;
-    width: calc(50vw - 10px);   /*acount for border in image-container*/
+    width: calc(50vw - 10px);
+    /*acount for border in image-container*/
     height: calc(500px - 10px);
-    background-color: rgba(51,51,51,0.8);
+    background-color: rgba(51, 51, 51, 0.8);
     transition: all 0.3s ease;
     opacity: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1;
-
     font-size: 2em;
     text-align: center;
     padding: 50px;
     box-sizing: border-box;
 }
 
-
 .image-cover.show {
     opacity: 1;
 }
-.image-container > img {
+
+.image-container>img {
     position: relative;
     display: block;
     width: auto;
@@ -323,6 +331,7 @@
 #slideshow-control {
     margin-top: 20px;
 }
+
 .round-button {
     padding: 0;
     outline: none;
@@ -330,7 +339,7 @@
     height: 15px;
     border-width: 0;
     border-radius: 10px;
-    background-color: white;    
+    background-color: white;
     margin: 0 5px;
     cursor: pointer;
 }
@@ -344,4 +353,63 @@
     border: 0px solid white;
 }
 
+@media only screen and (max-width: 1000px) {
+    .bio-image-container {
+        width: 90vw;
+        height: 90vw;
+    }
+    .bio-content {
+        width: 90vw;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+}
 
+@media only screen and (max-width: 900px) {
+    #home-header-title {
+        font-size: 1.5em;
+    }
+    #home-nav>div {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    #home-nav {
+        display: none;
+    }
+    #splash-screen-subtitle-container {
+        width: 90vw;
+    }
+    #splash-screen-subtitle {
+        color: white;
+        font-size: 2em;
+        font-weight: 500;
+    }
+    #subtitle {
+        width: 90vw;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 30px 0;
+    }
+    .subtitle-statement {
+        width: 90vw;
+        font-size: 1.2em;
+        text-align: center;
+    }
+    #slideshow {
+        scroll-padding: 5vw;
+    }
+    .image-container {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .image-cover {
+        width: calc(90vw - 10px);
+        height: calc(90vw - 10px);
+    }
+}

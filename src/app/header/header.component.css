@@ -27,6 +27,7 @@
 #header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--platinum);
     color: var(--jet);
     width: 85vw;
@@ -49,19 +50,17 @@
     cursor: pointer;
 }
 
-
-nav {
+#nav {
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 300;
 }
 
-nav a {
+#nav a {
     color: var(--jet);
     text-decoration: none;
 }
-
 
 .nav-underline {
     width: 0;
@@ -69,15 +68,124 @@ nav a {
     background-color: var(--jet);
     transition: width 0.3s ease;
 }
+
 .nav-underline.show {
     width: 100%;
 }
 
-nav > div {
+#nav>div {
     margin-left: 20px;
 }
 
-nav div span {
+#nav div span {
     cursor: pointer;
 }
 
+#mobile-burger-button {
+    display: none;
+    cursor: pointer;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+}
+#mobile-burger {
+    width: 35px;
+    height: 2px;
+    background: var(--jet);
+    transition: all 0.3s ease;
+}
+
+#mobile-burger::before, 
+#mobile-burger::after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 2px;
+    background: var(--jet);
+    transition: all 0.3s ease;
+}
+
+
+#mobile-burger::before {
+    transform: translateY(-8px);
+}
+
+#mobile-burger::after {
+    transform: translateY(8px);
+}
+
+#mobile-burger-button.open #mobile-burger {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+#mobile-burger-button.open #mobile-burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+#mobile-burger-button.open #mobile-burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+#mobile-nav-container {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--platinum);
+    color: var(--jet);
+    z-index: 21;
+
+}
+#mobile-nav {
+    top: 70px;
+    position: relative;
+    top: 100vh;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    transition: opacity 0.7s ease, top 0.3s ease;
+}
+
+#mobile-nav-container.open {
+    display: flex;
+}
+#mobile-nav.rise {
+    top: 0;
+    opacity: 1;
+}
+
+#mobile-nav div {
+    margin: 7px 0;
+}
+
+#mobile-nav svg {
+    width: 35px;
+    height: 35px;
+    fill: var(--jet);
+}
+
+@media only screen and (max-width: 900px) {
+    #header-title {
+        font-size: 1.5em;
+    }
+    #nav > div {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    #nav {
+        display: none;
+    }
+
+    #mobile-burger-button {
+        display: flex;
+    }
+}

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { Painting } from '../painting';
-import {EmitterService} from "../emitter.service";
+import { EmitterService } from "../emitter.service";
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -12,10 +13,26 @@ export class HomeComponent implements OnInit {
 
     private scrollToBioEmitter: BehaviorSubject<number>;
     private subscription: Subscription;
-    private currImgId = 0;
+    private currImgId = {
+        aInternal: 0,
+        // if you want several listeners use an array
+        aListener: function (val) { },
+        set a(val) {
+            this.aInternal = val;
+            this.aListener(val);
+        },
+        get a() {
+            return this.aInternal;
+        },
+        registerListener: function (listener) {
+            this.aListener = listener;
+        }
+    }
+    private isOpenHamburger: boolean = false;
+
     public slideshow: HTMLElement = document.querySelector("#slideshow");   // this is null fkin dumbass
-    
-    constructor(public emitter: EmitterService) { 
+
+    constructor(private router: Router, public emitter: EmitterService) {
         this.scrollToBioEmitter = emitter.getEmitter();
     }
 
@@ -29,7 +46,7 @@ export class HomeComponent implements OnInit {
         { picUrl: "../../assets/images/home_splash_background.jpg", picWidth: 1080, picHeight: 864, title: "Los gitanillos de Íllora se van de cuadrilla de vendimia" },
     ];
 
-    
+
 
     ngOnInit(): void {
 
@@ -40,16 +57,16 @@ export class HomeComponent implements OnInit {
         let image: HTMLElement = document.querySelector("#img0");
         document.querySelector("#slideshow").scroll({
             top: 0,
-            left: image.offsetLeft - (image.offsetWidth / 2),
+            left: image.offsetLeft + (image.offsetWidth / 2) - (window.innerWidth / 2),
             behavior: 'smooth'
         });
 
         // Set shadow on initial round button
-        document.querySelector("#first-round-button").classList.add("active-round-button");
+        document.querySelector("#button0").classList.add("active-round-button");
 
         this.subscription = this.scrollToBioEmitter.subscribe({
-            next: (num: number)=>{
-                if(num == 1){
+            next: (num: number) => {
+                if (num == 1) {
                     let bio: HTMLElement = document.querySelector("#bio-container");
                     let scrollOffset = bio.offsetTop - 70;
                     console.log("scrolling to bio - home");
@@ -58,9 +75,24 @@ export class HomeComponent implements OnInit {
                         behavior: "smooth"
                     });
                 }
-                
+
             }
         });
+
+        // register listener to update round button highlight when scrolling gallery
+        this.currImgId.registerListener((value: number) => {
+            // Update button shadow
+            let buttons: NodeList = document.querySelectorAll(".round-button");
+            // Remove previous shadow
+            for (let i = 0; i < buttons.length; i++) {
+                let currButton: HTMLElement = buttons[i] as HTMLElement;
+                currButton.classList.remove("active-round-button");
+            }
+            let button = document.querySelector("#button" + value);
+            // Add updated shadow
+            button.classList.add("active-round-button");
+
+        })
 
 
     }
@@ -79,11 +111,13 @@ export class HomeComponent implements OnInit {
     }
 
     scrollCarousel(imgId: number, button: HTMLElement): void {
+        // takes care of the scrolling part
         let image: HTMLElement = document.querySelector("#img" + imgId);
         let slideshow: HTMLElement = document.querySelector("#slideshow");
-        slideshow.scroll({top: 0, left: image.offsetLeft - (image.offsetWidth / 2), behavior: 'smooth'});
-        this.currImgId = imgId;
+        slideshow.scroll({ top: 0, left: image.offsetLeft - (image.offsetWidth / 2), behavior: 'smooth' });
+        this.currImgId.a = imgId;
 
+        /*
         // Update button shadow
         let buttons: NodeList = document.querySelectorAll(".round-button");
         // Remove previous shadow
@@ -93,7 +127,7 @@ export class HomeComponent implements OnInit {
         }
         // Add updated shadow
         button.classList.add("active-round-button");
-
+        */
     }
 
     limitScroll(): void {
@@ -101,25 +135,57 @@ export class HomeComponent implements OnInit {
         let firstImage: HTMLElement = document.querySelector("#img0");
         // last image it's possible to scroll to
         let lastImage: HTMLElement = document.querySelector("#img4");
+        let secondImage: HTMLElement = document.querySelector("#img1");
+        let thirdImage: HTMLElement = document.querySelector("#img2");
+        let fourthImage: HTMLElement = document.querySelector("#img3");
         let slideshow: HTMLElement = document.querySelector("#slideshow");
 
-        if (slideshow.scrollLeft > lastImage.offsetLeft - (lastImage.offsetWidth / 2)) {
-            //console.log("reached limit");
+        // this is a value that will be at the middle of the screen at all times
+        // think of it as a needle placed in the middle of the screen
+        let cursor: number = slideshow.scrollLeft + (window.innerWidth / 2);
+        // the cursor must be between the minVal and maxVal at all times
+        // minVal is in the middle of the first image, ditto for maxVal
+        let minValue: number = firstImage.offsetLeft + (firstImage.offsetWidth / 2);
+        let maxValue: number = lastImage.offsetLeft + (lastImage.offsetWidth / 2);
+
+        if (cursor < minValue) {
             slideshow.scroll({
                 top: 0,
-                left: lastImage.offsetLeft - (lastImage.offsetWidth / 2),
+                left: minValue - (window.innerWidth / 2),
                 behavior: "auto"
             });
         }
 
-        if (slideshow.scrollLeft < firstImage.offsetLeft - (firstImage.offsetWidth / 2)) {
+        if (cursor > maxValue) {
             slideshow.scroll({
                 top: 0,
-                left: firstImage.offsetLeft - (firstImage.offsetWidth / 2),
+                left: maxValue - (window.innerWidth / 2),
                 behavior: "auto"
             });
         }
 
+        let secondImageMiddle: number = secondImage.offsetLeft + (secondImage.offsetWidth / 2);
+        let thirdImageMiddle: number = thirdImage.offsetLeft + (thirdImage.offsetWidth / 2);
+        let fourthImageMiddle: number = fourthImage.offsetLeft + (fourthImage.offsetWidth / 2);
+
+
+        // to keep track of the current image being displayed
+        if (cursor === minValue) {
+            this.currImgId.a = 0;
+            console.log("new current image", this.currImgId);
+        } else if (cursor === secondImageMiddle) {
+            this.currImgId.a = 1;
+            console.log("new current image", this.currImgId);
+        } else if (cursor === thirdImageMiddle) {
+            this.currImgId.a = 2;
+            console.log("new current image", this.currImgId);
+        } else if (cursor === fourthImageMiddle) {
+            this.currImgId.a = 3;
+            console.log("new current image", this.currImgId);
+        } else if (cursor === maxValue) {
+            this.currImgId.a = 4;
+            console.log("new current image", this.currImgId);
+        }
     }
 
     showCover(target: HTMLElement): void {
@@ -138,8 +204,47 @@ export class HomeComponent implements OnInit {
     scrollToBio(): void {
         let bio: HTMLElement = document.querySelector("#bio-container");
         let bioOffset = bio.offsetTop - 70;
-        window.scroll({top: bioOffset, behavior: "smooth"});
+        window.scroll({ top: bioOffset, behavior: "smooth" });
         console.log("header");
         //bio.scrollIntoView({behavior: "smooth"});
     }
+
+    toggleHamburger(): void {
+        let hamburgerMenu: HTMLElement = document.querySelector("#home-mobile-burger-button");
+        let mobileMenu: HTMLElement = document.querySelector("#home-mobile-nav-container");
+        let mobileMenuContent: HTMLElement = document.querySelector("#home-mobile-nav");
+        let homeHeader: HTMLElement = document.querySelector("#home-header-container");
+
+        if (!this.isOpenHamburger) {
+            hamburgerMenu.classList.add("open");
+            mobileMenu.classList.add("open");
+            homeHeader.classList.add("alternative");
+            setTimeout(() => { mobileMenuContent.classList.add("rise"); }, 100);
+
+            this.isOpenHamburger = true;
+        } else {
+            setTimeout(() => {
+                hamburgerMenu.classList.remove("open");
+                mobileMenu.classList.remove("open");
+            }, 300);
+            mobileMenuContent.classList.remove("rise");
+            homeHeader.classList.remove("alternative");
+
+
+            this.isOpenHamburger = false;
+        }
+
+    }
+
+    gotoSection(section: string): void {
+        this.router.navigate([section]);
+        if (section === "home") {
+            let bioContainer: HTMLElement = document.querySelector("#bio-container");
+            let offset = bioContainer.offsetHeight - 70;
+            window.scroll({ top: offset, behavior: "smooth" });
+        }
+        this.toggleHamburger();
+    }
+
+
 }

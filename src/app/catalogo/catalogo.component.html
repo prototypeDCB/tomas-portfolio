@@ -1,22 +1,37 @@
 <div id="catalogo-container">
+    <div id="big-picture-cover" (click)="hidePainting($event.target)">
+        <div id="big-image-container">
+            <img id="big-image">
+        </div>
+        <div id="big-picture-close" (click)="hidePainting($event.target)">
+            <svg style="fill: white" viewBox="0 0 40 40">
+                <path d="M4.3,35.7L35.7,4.3"></path>
+                <path d="M4.3,4.3l31.4,31.4"></path>
+            </svg>
+        </div>
+    </div>
     <div id="catalogo">
         <div id="catalogo-title">Catálogo</div>
         <div id="catalogo-items">
 
             <div id="catalogo-items-col-1" class="catalogo-items-col">
-                <app-painting *ngFor="let painting of paintingCols[0]" [paintingAttr]="painting" class="painting"></app-painting>
+                <app-painting *ngFor="let painting of paintingCols[0]" [paintingAttr]="painting" class="painting"
+                    (click)="displayPainting(painting)"></app-painting>
             </div>
             <div id="catalogo-items-col-2" class="catalogo-items-col">
-                <app-painting *ngFor="let painting of paintingCols[1]" [paintingAttr]="painting" class="painting"></app-painting>
+                <app-painting *ngFor="let painting of paintingCols[1]" [paintingAttr]="painting" class="painting"
+                    (click)="displayPainting(painting)"></app-painting>
             </div>
             <div id="catalogo-items-col-3" class="catalogo-items-col">
-                <app-painting *ngFor="let painting of paintingCols[2]" [paintingAttr]="painting" class="painting"></app-painting>
+                <app-painting *ngFor="let painting of paintingCols[2]" [paintingAttr]="painting" class="painting"
+                    (click)="displayPainting(painting)"></app-painting>
             </div>
         </div>
     </div>
     <div id="catalogo-call-to-action">
         <div id="catalogo-call-to-action-title">¿No sabes qué regalo hacer este año para ser original?</div>
-        <div id="catalogo-call-to-action-subtitle">Pregúntame por medidas y precios, búscate una buena foto y envíamela!</div>
+        <div id="catalogo-call-to-action-subtitle">Pregúntame por medidas y precios, búscate una buena foto y envíamela!
+        </div>
         <a href="contacto"><button class="blue-button">Contacta conmigo</button></a>
     </div>
 </div>

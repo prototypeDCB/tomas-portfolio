@@ -1,0 +1,149 @@
+<div id="splash-screen">
+    <div id="splash-screen-cover"></div>
+    <div id="splash-screen-content">
+        <div id="home-header-container">
+            <header id=home-header>
+                <div id="home-header-title"><span>Tomás Gutiérrez</span></div>
+                <nav id="home-nav">
+                    <div (mouseenter)="enableUnderline($event.target)" (mouseleave)="disableUnderline($event.target)">
+                        <span (click)="scrollToBio()">Biografía</span>
+                        <div class="nav-underline"></div>
+                    </div>
+                    <div (mouseenter)="enableUnderline($event.target)" (mouseleave)="disableUnderline($event.target)">
+                        <span><a href="catalogo">Catálogo</a></span>
+                        <div class="nav-underline"></div>
+                    </div>
+                    <div (mouseenter)="enableUnderline($event.target)" (mouseleave)="disableUnderline($event.target)">
+                        <span><a href="curriculum">Currículum</a></span>
+                        <div class="nav-underline"></div>
+                    </div>
+                    <div (mouseenter)="enableUnderline($event.target)" (mouseleave)="disableUnderline($event.target)">
+                        <span><a href="contacto">Contacto</a></span>
+                        <div class="nav-underline"></div>
+                    </div>
+                    <div (mouseenter)="enableUnderline($event.target)" (mouseleave)="disableUnderline($event.target)">
+                        <span><a href="https://www.instagram.com/tometomy/" target="_blank">Instagram</a></span>
+                        <div class="nav-underline"></div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div id="splash-screen-subtitle-container">
+            <a href="catalogo"><button class="white-button splash-screen-button">Ver más</button></a>
+            <div id="splash-screen-subtitle"><span>Los gitanillos de Íllora <br>se van de cuadrilla de vendimia</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="subtitle-container">
+    <div id="subtitle">
+        <div id="subtitle-statement-1" class="subtitle-statement">
+            <p>Tomás Gutiérrez Ortiz es un artista pictórico que trabaja la técnica del óleo sobre
+                cualquier formato, también la pintura mural o graffiti. Su temática principal es el
+                costumbrismo manchego sobre el que traza la identidad y costumbres de la zona.</p>
+        </div>
+        <div id="subtitle-statement-2" class="subtitle-statement">
+            <p>Principalmente se nutre de fotos de archivos históricos para cambiarlas de escala,
+                recontextualizarlas o jugar con la identidad de los personajes. Otro de los puntos
+                fuertes de su trabajo es el retrato, dentro del cual trabaja alla prima y siendo
+                muy meticulaso con las fisionomías.</p>
+        </div>
+    </div>
+</div>
+
+<div id="bio-container">
+    <div id="bio-container-scroll-marker"></div>
+    <div id="bio-1" class="bio">
+        <div id="bio-image-container-1" class="bio-image-container"></div>
+        <div id="bio-content-1" class="bio-content">
+            <p>Tomás Gutiérrez Ortiz es un artista manchego, nacido en Tomelloso (Ciudad Real)
+                en 1998. Desde pequeño tuvo clara su admiración por Antonio López Torres,
+                que le sirvió de inspiración. Con 7 años empezó a pintar en el estudio de
+                pintura de Aurora Sahuquillo, para dejarlo con 15 años de edad tras su
+                matriculación en bachillerato modalidad artística en la EASDAL de Tomelloso.</p><br>
+
+            <p>Al acabar los dos años de bachillerato, se matricula en 2016 en Bellas Artes en
+                la Facultad de San Carlos de la Universidad Politécnica de Valencia, donde se
+                decanta por asignaturas como: retrato, pintura y entorno urbano, pintura y
+                figura, anatomía... , centrando así sus estudios superiores en el entendimiento
+                de la figura humana, el color y el espacio.</p>
+        </div>
+
+    </div>
+    <div id="bio-2" class="bio">
+        <div id="bio-image-container-2" class="bio-image-container"></div>
+        <div id="bio-content-2" class="bio-content">
+            <p>Graduado en 2020, inicia el máster en arteterapia para poder aplicar todo lo que
+                aprenda al trabajo comunitario y a la transformación de espacios urbanos con personas
+                discapacitadas y en riesgo de exclusión social.</p><br>
+
+            <p>Sus planes de futuro son dejar una obra en cada pueblo de la provincia de
+                Ciudad Real y así poder llegar a tener
+                reconocimiento a nivel regional, además, persigue la idea de abrir un estudio
+                creativo donde desarrollar su trabajo a un nivel más profesional y llegar a enseñar
+                a mucha más gente interesada en la disciplina pictórica.
+            </p>
+            <a href="curriculum"><button class="blue-button">Saber más</button></a>
+        </div>
+    </div>
+</div>
+
+<div id="gallery">
+    <div id="gallery-title">Galería</div>
+    <div id="slideshow" (scroll)="limitScroll()">
+        <!--
+        <div class="image-container">Image5</div>
+        <div id="img0" class="image-container img0 " (mouseenter)="showCover($event.target)" (mouseleave)="hideCover($event.target)">
+            <div class="image-cover">Title</div>
+            <img src="assets/images/abuelo_vino.jpg">
+        </div>
+        <div id="img1" class="image-container img1 " (mouseenter)="showCover($event.target)" (mouseleave)="hideCover($event.target)"></div>
+        <div id="img2" class="image-container img2 ">
+            <div class="image-cover">Title</div>
+        </div>
+        <div id="img3" class="image-container img3 ">
+            <div class="image-cover">Title</div>
+        </div>
+        <div id="img4" class="image-container img4 ">
+            <div class="image-cover">Title</div>
+        </div>
+        <div id="img5" class="image-container img5 ">
+            <div class="image-cover">Title</div>
+        </div>
+        <div class="image-container">Image0</div>
+    -->
+        <div class="image-container" [style.background-image]="'url(../../assets/images/home_splash_background.jpg)'"
+            (mouseenter)="showCover($event.target)" (mouseleave)="hideCover($event.target)">
+            <a href="catalogo">
+                <div class="image-cover"><span>Los gitanillos de Íllora se van de cuadrilla de vendimia</span></div>
+                <!--<img src="assets/images/home_splash_background.jpg">-->
+            </a>
+        </div>
+        <div *ngFor="let painting of paintingAttr; let i = index" [id]="'img'+i" [ngClass]="['image-container','img'+i]"
+            [style.background-image]="'url(' + painting.picUrl + ')'" (mouseenter)="showCover($event.target)"
+            (mouseleave)="hideCover($event.target)">
+            <a href="catalogo">
+                <div class="image-cover"><span>{{painting.title}}</span></div>
+                <!--<img [src]="painting.picUrl">-->
+            </a>
+        </div>
+
+        <div class="image-container" [style.background-image]="'url(../../assets/images/abuelo_vino.jpg)'"
+            (mouseenter)="showCover($event.target)" (mouseleave)="hideCover($event.target)">
+            <a href="catalogo">
+                <div class="image-cover"><span>El bodeguero aireando el mosto</span></div>
+                <!--<img src="assets/images/abuelo_vino.jpg">-->
+            </a>
+        </div>
+
+    </div>
+
+    <div id="slideshow-control">
+        <button id="first-round-button" (click)="scrollCarousel(0, $event.target)" class="round-button"></button>
+        <button (click)="scrollCarousel(1, $event.target)" class="round-button"></button>
+        <button (click)="scrollCarousel(2, $event.target)" class="round-button"></button>
+        <button (click)="scrollCarousel(3, $event.target)" class="round-button"></button>
+        <button (click)="scrollCarousel(4, $event.target)" class="round-button"></button>
+    </div>
+</div>

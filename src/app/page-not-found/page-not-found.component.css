@@ -1,0 +1,9 @@
+div {
+    margin-top: 70px;
+    font-size: 3em;
+    color: var(--middle-red);
+    height: calc(100vh - 370px); /*full screen but header and footer*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

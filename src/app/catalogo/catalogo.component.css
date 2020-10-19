@@ -1,0 +1,102 @@
+* {
+    //box-shadow: inset 0px 0px 0px 1px red;
+}
+
+#catalogo-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--platinum);
+}
+
+#catalogo {
+    width: 85vw;
+}
+
+#catalogo-title {
+    width: 100%;
+    font-weight: 500;
+    font-size: 2.8em;
+    margin: 140px 0 0 0;
+    text-align: center;
+    color: var(--jet);
+}
+
+#catalogo-items {
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 100px 0;
+}
+
+.catalogo-items-col {
+    width: 26vw;
+    display: flex;
+    flex-direction: column;
+}
+
+app-painting {
+    width: 100%;
+    margin-top: 100px;
+}
+
+
+.blue-button {
+    width: fit-content;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border-width: 0px;
+    font-size: 16px;
+    font-family: "Poppins";
+    padding: 16px 24px;
+    background-color: var(--space-cadet);
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.blue-button:hover {
+    cursor: pointer;
+    color: var(--jet);
+    background-color: var(--platinum);
+}
+/*
+.blue-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.blue-button:hover a {
+    color: var(--jet);
+    text-decoration: none;
+}
+*/
+
+#catalogo-call-to-action {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0;
+    text-align: center;
+}
+
+#catalogo-call-to-action div {  
+    margin: 20px;
+}
+
+#catalogo-call-to-action button {
+    margin-top: 40px;
+}
+
+#catalogo-call-to-action-title {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+#catalogo-call-to-action-subtitle {
+    font-size: 1.2em;
+    line-height: 1.4em;
+}

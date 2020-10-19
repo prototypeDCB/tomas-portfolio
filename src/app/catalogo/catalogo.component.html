@@ -1,0 +1,22 @@
+<div id="catalogo-container">
+    <div id="catalogo">
+        <div id="catalogo-title">Catálogo</div>
+        <div id="catalogo-items">
+
+            <div id="catalogo-items-col-1" class="catalogo-items-col">
+                <app-painting *ngFor="let painting of paintingCols[0]" [paintingAttr]="painting" class="painting"></app-painting>
+            </div>
+            <div id="catalogo-items-col-2" class="catalogo-items-col">
+                <app-painting *ngFor="let painting of paintingCols[1]" [paintingAttr]="painting" class="painting"></app-painting>
+            </div>
+            <div id="catalogo-items-col-3" class="catalogo-items-col">
+                <app-painting *ngFor="let painting of paintingCols[2]" [paintingAttr]="painting" class="painting"></app-painting>
+            </div>
+        </div>
+    </div>
+    <div id="catalogo-call-to-action">
+        <div id="catalogo-call-to-action-title">¿No sabes qué regalo hacer este año para ser original?</div>
+        <div id="catalogo-call-to-action-subtitle">Pregúntame por medidas y precios, búscate una buena foto y envíamela!</div>
+        <a href="contacto"><button class="blue-button">Contacta conmigo</button></a>
+    </div>
+</div>

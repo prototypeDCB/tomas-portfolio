@@ -1,0 +1,27 @@
+<div id="header-container">
+    <header id=header>
+        <div id="header-title"><span><a href="home">Tomás Gutiérrez</a></span></div>
+        <nav>
+            <div (mouseenter)="enableUnderline($event.target)" (mouseleave)="disableUnderline($event.target)">
+                <span (click)="scrollToBio()">Biografía</span>
+                <div class="nav-underline"></div>
+            </div>
+            <div (mouseenter)="enableUnderline($event.target)" (mouseleave)="disableUnderline($event.target)">
+                <span> <a href="catalogo">Catálogo</a></span>
+                <div class="nav-underline"></div>
+            </div>
+            <div (mouseenter)="enableUnderline($event.target)" (mouseleave)="disableUnderline($event.target)">
+                <span><a href="curriculum">Currículum</a></span>
+                <div class="nav-underline"></div>
+            </div>
+            <div (mouseenter)="enableUnderline($event.target)" (mouseleave)="disableUnderline($event.target)">
+                <span><a href="contacto">Contacto</a></span>
+                <div class="nav-underline"></div>
+            </div>
+            <div (mouseenter)="enableUnderline($event.target)" (mouseleave)="disableUnderline($event.target)">
+                <span><a href="https://www.instagram.com/tometomy/" target="_blank">Instagram</a></span>
+                <div class="nav-underline"></div>
+            </div>
+        </nav>
+    </header>
+</div>

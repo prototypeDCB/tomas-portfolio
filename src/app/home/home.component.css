@@ -1,0 +1,347 @@
+* {
+    //box-shadow: inset 0px 0px 0px 1px red;
+}
+
+#splash-screen {
+    width: 100vw;
+    height: 90vh;
+    background: url("../../assets/images/home_splash_background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#splash-screen-cover {
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+#home-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 110px;
+}
+
+#home-header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 85vw;
+    height: 50px;
+}
+
+#home-header-title {
+    font-size: 2em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+#home-header-title a {
+    color: white;
+    text-decoration: none;
+}
+
+#home-header-title:hover {
+    cursor: pointer;
+    color: var(--platinum);
+}
+
+#home-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+}
+
+#home-nav>div {
+    margin-left: 20px;
+}
+
+#home-nav>div:hover {
+    cursor: pointer;
+}
+
+#home-nav a {
+    color: white;
+    text-decoration: none;
+}
+.nav-underline {
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav-underline.show {
+    width: 100%;
+}
+
+#splash-screen-content {
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+}
+
+#splash-screen-subtitle-container {
+    width: 85vw;
+    height: calc(90vh - 110px);
+    /*remaining space after header*/
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 60px 0;
+}
+
+#splash-screen-subtitle {
+    color: white;
+    font-size: 2.4em;
+    font-weight: 500;
+}
+
+.white-button {
+    width: fit-content;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border-width: 0px;
+    font-size: 16px;
+    font-family: "Poppins";
+    padding: 16px 24px;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+
+.white-button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: var(--space-cadet);
+}
+
+.splash-screen-button {
+    margin-top: 30px;
+}
+
+.blue-button {
+    width: fit-content;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border-width: 0px;
+    font-size: 16px;
+    font-family: "Poppins";
+    padding: 16px 24px;
+    background-color: var(--space-cadet);
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.blue-button:hover {
+    cursor: pointer;
+    color: var(--jet);
+    background-color: var(--platinum);
+}
+
+.bio-button {
+    margin-top: 45px;
+}
+
+#subtitle-container {
+    width: 100vw;
+    height: 50vh;
+    background-color: var(--platinum);
+    display: flex;
+    justify-content: center;
+}
+
+#subtitle {
+    width: 85vw;
+    background-color: var(--platinum);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 30px;
+}
+
+.subtitle-statement {
+    width: 40vw;
+    font-size: 1.7em;
+    color: var(--jet);
+    font-weight: 300;
+}
+
+#bio-container {
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#bio-container-scroll-marker {
+    position: relative;
+    top: -70px;
+}
+
+.bio {
+    width: 85vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+#bio-1 {
+    flex-direction: row-reverse;
+}
+
+.bio-content {
+    width: 40vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.bio-image-container {
+    width: 540px;
+    height: 540px;
+    background-color: var(--jet);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#bio-image-container-1 {
+    background-image: url("../../assets/images/abuelo_vino.jpg");
+}
+
+#bio-image-container-2 {
+    background-image: url("../../assets/images/tractor.jpg");
+    background-position: 100%;
+}
+
+#gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    background-color: var(--platinum);
+    margin-top: 100px;
+    padding: 70px 0;
+}
+
+#gallery-title {
+    font-weight: 500;
+    font-size: 2.8em;
+    color: var(--jet);
+}
+
+#slideshow {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 25vw;
+    margin-top: 70px;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+.image-container {
+    flex-shrink: 0;
+    width: 50vw;
+    height: 100%;
+    background-color: var(--jet);
+    color: white;
+    transition: all 0.5s ease;
+    scroll-snap-align: end;
+    justify-content: center;
+    margin: 0 50px;
+    cursor: pointer;
+    border: 5px solid white;
+    box-sizing: border-box;
+
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.image-container a {
+    color: white;
+    text-decoration: none;
+}
+.image-container a:hover {
+    color: white;
+}
+
+.image-cover {
+    position: relative;
+    width: calc(50vw - 10px);   /*acount for border in image-container*/
+    height: calc(500px - 10px);
+    background-color: rgba(51,51,51,0.8);
+    transition: all 0.3s ease;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    font-size: 2em;
+    text-align: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+
+.image-cover.show {
+    opacity: 1;
+}
+.image-container > img {
+    position: relative;
+    display: block;
+    width: auto;
+    height: 100%;
+    top: -500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#slideshow-control {
+    margin-top: 20px;
+}
+.round-button {
+    padding: 0;
+    outline: none;
+    width: 15px;
+    height: 15px;
+    border-width: 0;
+    border-radius: 10px;
+    background-color: white;    
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.active-round-button {
+    background-color: var(--jet);
+    cursor: default;
+}
+
+.round-button:focus {
+    border: 0px solid white;
+}
+
+

@@ -42,18 +42,34 @@ export class CatalogoComponent implements OnInit {
         this.setCols();
 
 
-        
+
     }
     ngAfterViewInit() {
         // checks if we need to reorganize paintings
-        window.onresize = ()=>{
+        window.onresize = () => {
             let numCols: number = this.getNumCols();
-            if(numCols !== this.currentNumCols){
+            if (numCols !== this.currentNumCols) {
                 this.setCols();
                 console.log("need to repopulate");
                 this.currentNumCols = numCols;
             }
+
+            // set image preview container size
+            this.setBigImageSize();
         }
+
+        // set these value for the first time as well,
+        // because when the website loads the onresize event
+        // hasn't been executed yet
+        this.setBigImageSize();
+        
+    }
+
+    setBigImageSize(): void {
+        let size: number = Math.min(document.documentElement.clientWidth, document.documentElement.clientHeight);
+        let imageContainer: HTMLElement = document.querySelector("#big-image-container");
+        imageContainer.style.width = (size * 0.90) + "px";
+        imageContainer.style.height = (size * 0.90) + "px";
     }
 
     // sets the appropriate number of cols and populates them
@@ -73,11 +89,11 @@ export class CatalogoComponent implements OnInit {
 
     // gets the number of colums that we're going to display
     getNumCols(): number {
-        let width: number = window.innerWidth;
+        let width: number = document.documentElement.clientWidth || window.innerWidth;
         let numCols: number = 3;
-        if(width > 900){
+        if (width > 900) {
             numCols = 3;
-        } else if(width <= 900 && width > 763) {
+        } else if (width <= 900 && width > 763) {
             numCols = 2;
         } else {
             numCols = 1;
@@ -94,14 +110,14 @@ export class CatalogoComponent implements OnInit {
         image.src = painting.picUrl;
     }
 
-    hidePainting(target: HTMLElement){
+    hidePainting(target: HTMLElement) {
         let cover: HTMLElement = document.querySelector("#big-picture-cover");
         let bigImage: HTMLElement = document.querySelector("#big-image");
-        if(target !== bigImage){
+        if (target !== bigImage) {
             cover.classList.remove("show");
         }
         console.log(target);
-        
+
     }
 
 }

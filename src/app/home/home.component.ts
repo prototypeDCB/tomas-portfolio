@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
         let image: HTMLElement = document.querySelector("#img0");
         document.querySelector("#slideshow").scroll({
             top: 0,
-            left: image.offsetLeft + (image.offsetWidth / 2) - (window.innerWidth / 2),
+            left: image.offsetLeft + (image.offsetWidth / 2) - (document.documentElement.clientWidth / 2),
             behavior: 'smooth'
         });
 
@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
                 if (num == 1) {
                     let bio: HTMLElement = document.querySelector("#bio-container");
                     let scrollOffset = bio.offsetTop - 70;
-                    console.log("scrolling to bio - home");
+                    //console.log("scrolling to bio - home");
                     window.scroll({
                         top: scrollOffset,
                         behavior: "smooth"
@@ -114,7 +114,8 @@ export class HomeComponent implements OnInit {
         // takes care of the scrolling part
         let image: HTMLElement = document.querySelector("#img" + imgId);
         let slideshow: HTMLElement = document.querySelector("#slideshow");
-        slideshow.scroll({ top: 0, left: image.offsetLeft - (image.offsetWidth / 2), behavior: 'smooth' });
+        // slideshow.scroll({ top: 0, left: image.offsetLeft - (image.offsetWidth / 2), behavior: 'smooth' });
+        slideshow.scroll({ top: 0, left: (image.offsetLeft + image.offsetWidth / 2 ) - (document.documentElement.clientWidth / 2), behavior: 'smooth' });
         this.currImgId.a = imgId;
 
         /*
@@ -142,7 +143,8 @@ export class HomeComponent implements OnInit {
 
         // this is a value that will be at the middle of the screen at all times
         // think of it as a needle placed in the middle of the screen
-        let cursor: number = slideshow.scrollLeft + (window.innerWidth / 2);
+        //let cursor: number = slideshow.scrollLeft + (window.innerWidth / 2);
+        let cursor: number = slideshow.scrollLeft + (document.documentElement.clientWidth / 2);
         // the cursor must be between the minVal and maxVal at all times
         // minVal is in the middle of the first image, ditto for maxVal
         let minValue: number = firstImage.offsetLeft + (firstImage.offsetWidth / 2);
@@ -151,7 +153,7 @@ export class HomeComponent implements OnInit {
         if (cursor < minValue) {
             slideshow.scroll({
                 top: 0,
-                left: minValue - (window.innerWidth / 2),
+                left: minValue - (document.documentElement.clientWidth / 2),
                 behavior: "auto"
             });
         }
@@ -159,7 +161,7 @@ export class HomeComponent implements OnInit {
         if (cursor > maxValue) {
             slideshow.scroll({
                 top: 0,
-                left: maxValue - (window.innerWidth / 2),
+                left: maxValue - (document.documentElement.clientWidth / 2),
                 behavior: "auto"
             });
         }
@@ -170,42 +172,43 @@ export class HomeComponent implements OnInit {
 
 
         // to keep track of the current image being displayed
-        if (cursor === minValue) {
+        if (cursor <= minValue + 10 && cursor >= minValue - 10) {   // leave a bit of margin
             this.currImgId.a = 0;
-            console.log("new current image", this.currImgId);
-        } else if (cursor === secondImageMiddle) {
+            //console.log("new current image", this.currImgId);
+        } else if (cursor <= secondImageMiddle + 10 && cursor >= secondImageMiddle - 10) {
             this.currImgId.a = 1;
-            console.log("new current image", this.currImgId);
-        } else if (cursor === thirdImageMiddle) {
+            //console.log("new current image", this.currImgId);
+        } else if (cursor <= thirdImageMiddle + 10 && cursor >= thirdImageMiddle - 10) {
             this.currImgId.a = 2;
-            console.log("new current image", this.currImgId);
-        } else if (cursor === fourthImageMiddle) {
+            //console.log("new current image", this.currImgId);
+        } else if (cursor <= fourthImageMiddle + 10 && cursor >= fourthImageMiddle - 10) {
             this.currImgId.a = 3;
-            console.log("new current image", this.currImgId);
-        } else if (cursor === maxValue) {
+            //console.log("new current image", this.currImgId);
+        } else if (cursor <= maxValue + 10 && cursor >= maxValue - 10) {
             this.currImgId.a = 4;
-            console.log("new current image", this.currImgId);
+            //console.log("new current image", this.currImgId);
         }
+
     }
 
     showCover(target: HTMLElement): void {
         let cover: HTMLElement = target.querySelector(".image-cover");
         cover.classList.add("show");
-        console.log("Entering", cover);
+        //console.log("Entering", cover);
 
     }
 
     hideCover(target: HTMLElement): void {
         let cover: HTMLElement = target.querySelector(".image-cover");
         cover.classList.remove("show");
-        console.log("Leaving", cover);
+        //console.log("Leaving", cover);
     }
 
     scrollToBio(): void {
         let bio: HTMLElement = document.querySelector("#bio-container");
         let bioOffset = bio.offsetTop - 70;
         window.scroll({ top: bioOffset, behavior: "smooth" });
-        console.log("header");
+        //console.log("header");
         //bio.scrollIntoView({behavior: "smooth"});
     }
 

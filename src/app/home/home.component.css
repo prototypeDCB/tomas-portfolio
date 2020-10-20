@@ -272,7 +272,7 @@
     background-color: var(--jet);
     color: white;
     transition: all 0.5s ease;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     justify-content: center;
     margin: 0 50px;
     cursor: pointer;

@@ -28,21 +28,24 @@
 }
 
 #big-image-container {
-    width: 90vw;
+    width: 90vw;    /*these values are replaced in the javascript*/
     height: 90vh;
     box-sizing: border-box;
+    display: flex;
+    justify-items: center;
+    align-items: center;
 }
 #big-image {
     display: block;
-    margin: 0 auto;
-    height: 100%;
-    width: auto;
+    //margin: 0 auto;
+    height: auto;
+    width: 100%;
 }
 
 #big-picture-close {
     position: absolute;
-    top: 20px;
-    right: 70px;
+    top: 5vh;
+    right: 5vw;
     width: 20px;
     height: 20px;
     cursor: pointer;

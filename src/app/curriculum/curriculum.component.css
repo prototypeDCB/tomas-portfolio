@@ -7,16 +7,19 @@
     height: 70px;
     background-color: var(--platinum);
 }
+
 #curriculum-container {
     display: flex;
     flex-direction: row;
 }
-#left-side{
+
+#left-side {
     width: 30vw;
     box-sizing: border-box;
     padding: 50px calc(15vw / 4) 50px calc(15vw / 2);
     background-color: var(--space-cadet);
     color: white;
+    min-width: 300px;
 }
 
 .left-side-title {
@@ -54,15 +57,14 @@
 
 #right-side {
     width: 70vw;
+    box-sizing: border-box;
     padding: 50px calc(15vw / 2) 50px calc(15vw / 4);
-
 }
 
 .right-side-section-title {
     font-size: 1.3em;
     color: var(--middle-red);
     font-weight: 600;
-
 }
 
 .right-side-content {
@@ -79,7 +81,7 @@
 }
 
 .right-side-content-date {
-    color: rgb(77,77,77);
+    color: rgb(77, 77, 77);
     font-size: 0.9em;
 }
 
@@ -106,8 +108,8 @@
 #curriculum-contact-banner-subtitle {
     font-size: 1.2em;
     line-height: 1.4em;
+    font-weight: 300;
 }
-
 
 .blue-button {
     width: fit-content;
@@ -129,3 +131,33 @@
     background-color: white;
 }
 
+@media only screen and (max-width: 1200px) {
+    #left-side {
+        padding: 50px calc(15vw / 4) 50px calc(15vw / 4);
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    #curriculum-container {
+        flex-direction: column-reverse;
+    }
+    #left-side {
+        width: 100vw;
+    }
+    #right-side {
+        width: 100vw;
+    }
+    .right-side-content {
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .right-side-content-name {
+        width: 90vw;
+    }
+    #curriculum-contact-banner div {
+        width: 80vw;
+    }
+    #curriculum-contact-banner-title {
+        font-size: 1.5em;
+    }
+}

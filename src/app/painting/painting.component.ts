@@ -19,7 +19,7 @@ export class PaintingComponent implements OnInit {
         // demo data
         //this.givenWidth = 360;
         /*this.paintingAttr = {
-            picUrl: "../../assets/images/teatro_cervantes.jpg",
+            picUrl: "../../assets/images/teatro_cervantes.webp",
             picWidth: 1080,
             picHeight: 673,
             title: "Teatro Cervantes",

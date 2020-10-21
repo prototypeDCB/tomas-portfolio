@@ -119,7 +119,7 @@
         <div class="image-container">Image5</div>
         <div id="img0" class="image-container img0 " (mouseenter)="showCover($event.target)" (mouseleave)="hideCover($event.target)">
             <div class="image-cover">Title</div>
-            <img src="assets/images/abuelo_vino.jpg">
+            <img src="assets/images/abuelo_vino.webp">
         </div>
         <div id="img1" class="image-container img1 " (mouseenter)="showCover($event.target)" (mouseleave)="hideCover($event.target)"></div>
         <div id="img2" class="image-container img2 ">
@@ -136,11 +136,11 @@
         </div>
         <div class="image-container">Image0</div>
     -->
-        <div class="image-container" [style.background-image]="'url(../../assets/images/home_splash_background.jpg)'"
+        <div class="image-container" [style.background-image]="'url(../../assets/images/home_splash_background.webp)'"
             (mouseenter)="showCover($event.target)" (mouseleave)="hideCover($event.target)">
             <a href="catalogo">
                 <div class="image-cover"><span>Los gitanillos de Íllora se van de cuadrilla de vendimia</span></div>
-                <!--<img src="assets/images/home_splash_background.jpg">-->
+                <!--<img src="assets/images/home_splash_background.webp">-->
             </a>
         </div>
         <div *ngFor="let painting of paintingAttr; let i = index" [id]="'img'+i" [ngClass]="['image-container','img'+i]"
@@ -152,11 +152,11 @@
             </a>
         </div>
 
-        <div class="image-container" [style.background-image]="'url(../../assets/images/abuelo_vino.jpg)'"
+        <div class="image-container" [style.background-image]="'url(../../assets/images/abuelo_vino.webp)'"
             (mouseenter)="showCover($event.target)" (mouseleave)="hideCover($event.target)">
             <a href="catalogo">
                 <div class="image-cover"><span>El bodeguero aireando el mosto</span></div>
-                <!--<img src="assets/images/abuelo_vino.jpg">-->
+                <!--<img src="assets/images/abuelo_vino.webp">-->
             </a>
         </div>
 

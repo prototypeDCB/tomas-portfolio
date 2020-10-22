@@ -39,11 +39,11 @@ export class HomeComponent implements OnInit {
 
 
     public paintingAttr: Painting[] = [
-        { picUrl: "../../assets/images/abuelo_vino.webp", picWidth: 1080, picHeight: 1349, title: "El bodeguero aireando el mosto" },
-        { picUrl: "../../assets/images/boinas.webp", picWidth: 1080, picHeight: 1345, title: "Boinas en la plaza de Tomelloso" },
-        { picUrl: "../../assets/images/descanso.webp", picWidth: 1080, picHeight: 1346, title: "Descanso para la comida" },
-        { picUrl: "../../assets/images/familia.webp", picWidth: 1080, picHeight: 848, title: "Familia vendimiando" },
-        { picUrl: "../../assets/images/home_splash_background.webp", picWidth: 1080, picHeight: 864, title: "Los gitanillos de Íllora se van de cuadrilla de vendimia" },
+        { picUrl: "../../assets/images/abuelo_vino.jpg", picWidth: 1080, picHeight: 1349, title: "El bodeguero aireando el mosto" },
+        { picUrl: "../../assets/images/boinas.jpg", picWidth: 1080, picHeight: 1345, title: "Boinas en la plaza de Tomelloso" },
+        { picUrl: "../../assets/images/descanso.jpg", picWidth: 1080, picHeight: 1346, title: "Descanso para la comida" },
+        { picUrl: "../../assets/images/familia.jpg", picWidth: 1080, picHeight: 848, title: "Familia vendimiando" },
+        { picUrl: "../../assets/images/home_splash_background.jpg", picWidth: 1080, picHeight: 864, title: "Los gitanillos de Íllora se van de cuadrilla de vendimia" },
     ];
 
 

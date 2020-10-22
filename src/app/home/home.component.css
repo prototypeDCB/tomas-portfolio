@@ -5,7 +5,7 @@
 #splash-screen {
     width: 100vw;
     height: 90vh;
-    background: url("../../assets/images/home_splash_background.webp") no-repeat center center fixed;
+    background: url("../../assets/images/home_splash_background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -229,11 +229,11 @@
 }
 
 #bio-image-container-1 {
-    background-image: url("../../assets/images/abuelo_vino.webp");
+    background-image: url("../../assets/images/abuelo_vino.jpg");
 }
 
 #bio-image-container-2 {
-    background-image: url("../../assets/images/tractor.webp");
+    background-image: url("../../assets/images/tractor.jpg");
     background-position: 100%;
 }
 
@@ -378,7 +378,7 @@
 
 @media only screen and (max-width: 770px) {
     #splash-screen {
-        background: url("../../assets/images/home_splash_background.webp") no-repeat center center scroll;
+        background: url("../../assets/images/home_splash_background.jpg") no-repeat center center scroll;
     }
     #home-nav {
         display: none;

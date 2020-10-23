@@ -15,30 +15,31 @@
                     <circle cx="393.6" cy="118.4" r="17.056" /></svg></div></a>
         </div>
         <div id="contact-half-right" class="contact-half">
-            <form NgNoForm target="_blank" method="POST">
-
-
+            <form>
                 <div id="form-section-name" class="form-section">
-                    <label for="fname">Nombre *</label>
-                    <input type="text" id="fname" name="fname" required autocomplete="given-name">
+                    <label id="fname-label" for="fname">Nombre *</label>
+                    <input type="text" id="fname" name="fname" required autocomplete="given-name" maxlength="100">
                 </div>
                 <div id="form-section-familyname" class="form-section">
-                    <label for="ffamilyname">Apellidos *</label>
-                    <input type="text" id="ffamilyname" name="ffamilyname" required autocomplete="family-name">
+                    <label id="ffamilyname-label" for="ffamilyname">Apellidos *</label>
+                    <input type="text" id="ffamilyname" name="ffamilyname" required autocomplete="family-name" maxlength="100">
                 </div>
 
                 <div class="form-section">
-                    <label for="femail">Email *</label>
-                    <input type="email" id="femail" name="femail" required autocomplete="email">
+                    <label id="femail-label" for="femail">Email *</label>
+                    <input type="email" id="femail" name="femail" required autocomplete="email" maxlength="100">
                 </div>
 
                 <div class="form-section">
-                    <label for="message">Mensaje *</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label id="message-label" for="message">Mensaje *</label>
+                    <textarea id="message" name="message" required maxlength="1000"></textarea>
                 </div>
 
-                <input type="submit" value="Enviar" class="blue-button" (click)="onClickForm()">
             </form>
+            <button class="blue-button" (click)="onClickForm()">Enviar</button>
+            <div id="confirm-send">
+                <span id="confirm-send">El mensaje se ha enviado correctamente</span>
+            </div>
         </div>
     </div>
 

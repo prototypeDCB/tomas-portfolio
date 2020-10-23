@@ -103,7 +103,7 @@ export class HeaderComponent implements OnInit {
 
     scrollToBio(): void {
         //console.log("scrolling to bio");
-        console.log("navigating home");
+        //console.log("navigating home");
         this.router.navigate(["home"]);
         this.scrollToBioEmitter.next(1);
     }

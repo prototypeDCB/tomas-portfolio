@@ -50,7 +50,7 @@ export class CatalogoComponent implements OnInit {
             let numCols: number = this.getNumCols();
             if (numCols !== this.currentNumCols) {
                 this.setCols();
-                console.log("need to repopulate");
+                //console.log("need to repopulate");
                 this.currentNumCols = numCols;
             }
 
@@ -83,7 +83,7 @@ export class CatalogoComponent implements OnInit {
             col = (col + 1) % numCols;
         }
 
-        console.log("redistributed paintings", this.paintingCols);
+        //console.log("redistributed paintings", this.paintingCols);
 
     }
 
@@ -103,7 +103,7 @@ export class CatalogoComponent implements OnInit {
     }
 
     displayPainting(painting: Painting): void {
-        console.log("showing picture", painting);
+        //console.log("showing picture", painting);
         let cover: HTMLElement = document.querySelector("#big-picture-cover");
         let image: HTMLImageElement = document.querySelector("#big-image");
         cover.classList.add("show");
@@ -116,7 +116,7 @@ export class CatalogoComponent implements OnInit {
         if (target !== bigImage) {
             cover.classList.remove("show");
         }
-        console.log(target);
+        //console.log(target);
 
     }
 

@@ -97,6 +97,23 @@ textarea {
     height: 100px;
 }
 
+label {
+    color: black;
+}
+#confirm-send {
+    margin-top: 10px;
+    color: #56765A;
+    font-weight: 500;
+    display: none;
+}
+
+.incorrect-info {
+    color: #C33149;
+}
+
+.correct-info {
+    color: black;
+}
 .blue-button {
     width: fit-content;
     -webkit-appearance: none;

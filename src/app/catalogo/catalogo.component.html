@@ -12,6 +12,10 @@
     </div>
     <div id="catalogo">
         <div id="catalogo-title">Catálogo</div>
+        <div id="change-section" (click)="changeSection($event.target)">
+            <span (mouseenter)="toggleChangeSectionUnderline($event)" (mouseleave)="toggleChangeSectionUnderline($event)">Ver murales</span>
+            <div class="section-underline"></div>
+        </div>
         <div id="catalogo-items">
 
             <div id="catalogo-items-col-1" class="catalogo-items-col">

@@ -12,26 +12,67 @@ export class CatalogoComponent implements OnInit {
 
     private currentNumCols: number = 0;
     private actualWidth: number = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-    public paintingAtributes: Painting[] = [
-        { picUrl: "../../assets/images/abuelo_vino.jpg", picWidth: 1080, picHeight: 1349, title: "El bodeguero aireando el mosto" },
-        { picUrl: "../../assets/images/boinas.jpg", picWidth: 1080, picHeight: 1345, title: "Boinas en la plaza de Tomelloso" },
-        { picUrl: "../../assets/images/descanso.jpg", picWidth: 1080, picHeight: 1346, title: "Descanso para la comida" },
-        { picUrl: "../../assets/images/familia.jpg", picWidth: 1080, picHeight: 848, title: "Familia vendimiando" },
-        { picUrl: "../../assets/images/home_splash_background.jpg", picWidth: 1080, picHeight: 864, title: "Los gitanillos de Íllora se van de cuadrilla de vendimia" },
-        { picUrl: "../../assets/images/inundo.jpg", picWidth: 1080, picHeight: 892, title: "Se me inundó el estudio" },
-        { picUrl: "../../assets/images/jota.jpg", picWidth: 1080, picHeight: 856, title: "La jota de la sartén" },
-        { picUrl: "../../assets/images/pareja.jpg", picWidth: 1080, picHeight: 1355, title: "Los padres de Jonathan Víctor" },
-        { picUrl: "../../assets/images/pintor_paisaje.jpg", picWidth: 1080, picHeight: 774, title: "Paisaje manchego con manchego incrustado" },
-        { picUrl: "../../assets/images/Reata_de_mulas.jpg", picWidth: 1080, picHeight: 889, title: "Reata de mulas" },
-        { picUrl: "../../assets/images/silos.jpg", picWidth: 1080, picHeight: 908, title: "Comprobación del grado de la uva en depósito industrial" },
-        { picUrl: "../../assets/images/teatro_cervantes.jpg", picWidth: 1080, picHeight: 673, title: "El antiguo Teatro Cervantes de la calle el Charco" },
-        { picUrl: "../../assets/images/terreras.jpg", picWidth: 1080, picHeight: 1335, title: "Las terreras" },
-        { picUrl: "../../assets/images/tientas.jpg", picWidth: 1080, picHeight: 1073, title: "Pa’ qué me tientas" },
-        { picUrl: "../../assets/images/tomasa.jpg", picWidth: 1080, picHeight: 898, title: "Tomasa vendimiando" },
-        { picUrl: "../../assets/images/tractor.jpg", picWidth: 1080, picHeight: 890, title: "Remolque cargado en plena vendimia" },
-        { picUrl: "../../assets/images/valencia_1.jpg", picWidth: 1080, picHeight: 850, title: "Paisaje de Valencia I" },
-        { picUrl: "../../assets/images/valencia_2.jpg", picWidth: 1080, picHeight: 684, title: "Paisaje de Valencia II" },
+    public paintings: Painting[] = [
+        { picUrl: "../../assets/images/paintings/abuelo_vino.jpg", picWidth: 1080, picHeight: 1349, title: "El bodeguero aireando el mosto" },
+        { picUrl: "../../assets/images/paintings/boinas.jpg", picWidth: 1080, picHeight: 1345, title: "Boinas en la plaza de Tomelloso" },
+        { picUrl: "../../assets/images/paintings/descanso.jpg", picWidth: 1080, picHeight: 1346, title: "Descanso para la comida" },
+        { picUrl: "../../assets/images/paintings/familia.jpg", picWidth: 1080, picHeight: 848, title: "Familia vendimiando" },
+        { picUrl: "../../assets/images/paintings/home_splash_background.jpg", picWidth: 1080, picHeight: 864, title: "Los gitanillos de Íllora se van de cuadrilla de vendimia" },
+        { picUrl: "../../assets/images/paintings/inundo.jpg", picWidth: 1080, picHeight: 892, title: "Se me inundó el estudio" },
+        { picUrl: "../../assets/images/paintings/jota.jpg", picWidth: 1080, picHeight: 856, title: "La jota de la sartén" },
+        { picUrl: "../../assets/images/paintings/pareja.jpg", picWidth: 1080, picHeight: 1355, title: "Los padres de Jonathan Víctor" },
+        { picUrl: "../../assets/images/paintings/pintor_paisaje.jpg", picWidth: 1080, picHeight: 774, title: "Paisaje manchego con manchego incrustado" },
+        { picUrl: "../../assets/images/paintings/Reata_de_mulas.jpg", picWidth: 1080, picHeight: 889, title: "Reata de mulas" },
+        { picUrl: "../../assets/images/paintings/silos.jpg", picWidth: 1080, picHeight: 908, title: "Comprobación del grado de la uva en depósito industrial" },
+        { picUrl: "../../assets/images/paintings/teatro_cervantes.jpg", picWidth: 1080, picHeight: 673, title: "El antiguo Teatro Cervantes de la calle el Charco" },
+        { picUrl: "../../assets/images/paintings/terreras.jpg", picWidth: 1080, picHeight: 1335, title: "Las terreras" },
+        { picUrl: "../../assets/images/paintings/tientas.jpg", picWidth: 1080, picHeight: 1073, title: "Pa’ qué me tientas" },
+        { picUrl: "../../assets/images/paintings/tomasa.jpg", picWidth: 1080, picHeight: 898, title: "Tomasa vendimiando" },
+        { picUrl: "../../assets/images/paintings/tractor.jpg", picWidth: 1080, picHeight: 890, title: "Remolque cargado en plena vendimia" },
+        { picUrl: "../../assets/images/paintings/valencia_1.jpg", picWidth: 1080, picHeight: 850, title: "Paisaje de Valencia I" },
+        { picUrl: "../../assets/images/paintings/valencia_2.jpg", picWidth: 1080, picHeight: 684, title: "Paisaje de Valencia II" },
     ];
+
+    public murals: Painting[] = [
+        { picUrl: "../../assets/images/murals/bacín-2.webp", picWidth: 1080, picHeight: 1073, title: "Bacín 2" },
+        { picUrl: "../../assets/images/murals/bacín-3.webp", picWidth: 1080, picHeight: 1069, title: "Bacín 3" },
+        { picUrl: "../../assets/images/murals/bacín-4.webp", picWidth: 1080, picHeight: 1069, title: "Bacín 4" },
+        { picUrl: "../../assets/images/murals/bacín.webp", picWidth: 1080, picHeight: 1075, title: "Bacín" },
+        { picUrl: "../../assets/images/murals/bodegon-manchego.webp", picWidth: 1080, picHeight: 978, title: "Bodegón manchego" },
+        { picUrl: "../../assets/images/murals/centro-joven-valdepeñas-2.webp", picWidth: 1080, picHeight: 1078, title: "Centro joven de Valdepeñas 2" },
+        { picUrl: "../../assets/images/murals/centro-joven-valdepeñas-3.webp", picWidth: 1080, picHeight: 1079, title: "Centro joven de Valdepeñas 3" },
+        { picUrl: "../../assets/images/murals/centro-joven-valdepeñas-4.webp", picWidth: 1080, picHeight: 1077, title: "Centro joven de Valdepeñas 4" },
+        { picUrl: "../../assets/images/murals/centro-joven-valdepeñas.webp", picWidth: 1080, picHeight: 1075, title: "Centro joven de Valdepeñas" },
+        { picUrl: "../../assets/images/murals/estampa-costumbrista-de-una-familia-manchega-en-los-70.webp", picWidth: 1080, picHeight: 1077, title: "Estampa costumbrista de una familia manchega en los 70" },
+        { picUrl: "../../assets/images/murals/gente-de-boina.webp", picWidth:1080 , picHeight: 1075, title: "Gente de boina" },
+        { picUrl: "../../assets/images/murals/historia-en-tomelloso-2.webp", picWidth:1080 , picHeight: 1070, title: "Historia en Tomelloso 2" },
+        { picUrl: "../../assets/images/murals/historia-en-tomelloso-3.webp", picWidth: 1080, picHeight: 1072, title: "Historia en Tomelloso 3" },
+        { picUrl: "../../assets/images/murals/historia-en-tomelloso-4.webp", picWidth: 1080, picHeight: 1077, title: "Historia en Tomelloso 4" },
+        { picUrl: "../../assets/images/murals/historia-en-tomelloso-5.webp", picWidth:1080, picHeight: 1076, title: "Historia en Tomelloso 5" },
+        { picUrl: "../../assets/images/murals/historia-en-tomelloso.webp", picWidth: 1080, picHeight: 1068, title: "Historia en Tomelloso" },
+        { picUrl: "../../assets/images/murals/homenaje-a-la-mujer-manchega.webp", picWidth:1080, picHeight: 846, title: "Homenaje a la mujer manchega" },
+        { picUrl: "../../assets/images/murals/la-dorotea.webp", picWidth: 1080, picHeight: 859, title: "La Dorotea" },
+        { picUrl: "../../assets/images/murals/la-muchacha-extremeña.webp", picWidth:1080, picHeight: 1078, title: "La muchacha extremeña" },
+        { picUrl: "../../assets/images/murals/la-tomellosera-2.webp", picWidth: 1080, picHeight: 1073, title: "La muchacha tomellosera 2" },
+        { picUrl: "../../assets/images/murals/la-tomellosera-3.webp", picWidth: 1080, picHeight: 956, title: "La muchacha tomellosera 3" },
+        { picUrl: "../../assets/images/murals/la-tomellosera-4.webp", picWidth: 1080, picHeight: 1077, title: "La muchacha tomellosera 4" },
+        { picUrl: "../../assets/images/murals/la-tomellosera.webp", picWidth: 1080, picHeight: 1078, title: "La muchacha tomellosera" },
+        { picUrl: "../../assets/images/murals/las-cuatrillizas-de-socuellamos.webp", picWidth: 1080, picHeight: 1072, title: "Las cuatrillizas de socuéllamos" },
+        { picUrl: "../../assets/images/murals/manchega-azafranera.webp", picWidth: 1080, picHeight: 1077, title: "Manchega azafranera" },
+        { picUrl: "../../assets/images/murals/mi-bisabuelo-jesus-y-su-vecino-el-pelao.webp", picWidth: 1080, picHeight: 1077, title: "Mi bisabuela Jesús y su vecino \"El Pelao\"" },
+        { picUrl: "../../assets/images/murals/muchachejos.webp", picWidth: 1080, picHeight: 1072, title: "Muchachejos" },
+        { picUrl: "../../assets/images/murals/mujeres-osseñas-sobre-jota-del-garrote.webp", picWidth: 1080, picHeight: 1079, title: "Mujeres osseñas sobre jota del garrote" },
+        { picUrl: "../../assets/images/murals/recuerdos-por-valdepeñas-2.webp", picWidth: 1080, picHeight: 1078, title: "Recuerdos por Valdepeñas 2" },
+        { picUrl: "../../assets/images/murals/recuerdos-por-valdepeñas-3.webp", picWidth: 1080, picHeight: 1080, title: "Recuerdos por Valdepeñas 3" },
+        { picUrl: "../../assets/images/murals/recuerdos-por-valdepeñas-4.webp", picWidth: 1080, picHeight: 1074, title: "Recuerdos por Valdepeñas 4" },
+        { picUrl: "../../assets/images/murals/recuerdos-por-valdepeñas.webp", picWidth: 1080, picHeight: 1073, title: "Recuerdos por Valdepeñas" },
+    ];
+    // public currentContents: Painting[] = this.paintings;
+    public currentContents: Painting[] = this.paintings;
+    public changeContentMurals: string = "Ver murales";
+    public changeContentPaintings: string = "Ver cuadros";
+
+
 
     public paintingCols: Painting[][];
     ngOnInit(): void {
@@ -40,6 +81,7 @@ export class CatalogoComponent implements OnInit {
         this.currentNumCols = this.getNumCols();
         // Fill cols with paintings
         this.setCols();
+        
 
 
 
@@ -78,8 +120,8 @@ export class CatalogoComponent implements OnInit {
 
         // populate cols
         this.paintingCols = [[], [], []];
-        for (let i = 0, col = 0; i < this.paintingAtributes.length; i++) {
-            this.paintingCols[col].push(this.paintingAtributes[i]);
+        for (let i = 0, col = 0; i < this.currentContents.length; i++) {
+            this.paintingCols[col].push(this.currentContents[i]);
             col = (col + 1) % numCols;
         }
 
@@ -120,4 +162,44 @@ export class CatalogoComponent implements OnInit {
 
     }
 
+    changeSection(button: HTMLElement) {
+        if(button.textContent == this.changeContentMurals) {
+            this.currentContents = this.murals;
+            button.textContent = this.changeContentPaintings;
+        } else {
+            this.currentContents = this.paintings;
+            button.textContent = this.changeContentMurals;
+            
+        }
+        this.setCols();
+        this.changeSelectionAnim();
+    }
+
+    toggleChangeSectionUnderline(event: MouseEvent) {
+        let button: HTMLElement = document.querySelector("#change-section span");
+        let underline: HTMLElement = document.querySelector("#change-section .section-underline");
+        
+        if(event.type == "mouseenter") {
+            underline.style.width = button.clientWidth + "px";
+        } else {
+            underline.style.width = "0px";
+        }  
+    } 
+
+    changeSelectionAnim() {
+        let button: HTMLElement = document.querySelector("#change-section span");
+        let underline: HTMLElement = document.querySelector("#change-section .section-underline");
+        button.style.transition = "all 0.3s ease";
+        button.style.transform = "translate(500px,0px)";
+        button.style.opacity = "0";
+        underline.style.width = "0px";
+        setTimeout(()=>{
+            button.style.transition = "none";
+            button.style.transform = "translate(0px,0px)";
+            setTimeout(()=>{
+                button.style.transition = "all 0.3s ease";
+                button.style.opacity = "1";
+            }, 200);
+        },300);
+    }
 }

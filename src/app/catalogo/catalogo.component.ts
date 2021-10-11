@@ -53,10 +53,10 @@ export class CatalogoComponent implements OnInit {
         { picUrl: "../../assets/images/murals/homenaje-a-la-mujer-manchega.webp", picWidth:1080, picHeight: 846, title: "Homenaje a la mujer manchega" },
         { picUrl: "../../assets/images/murals/la-dorotea.webp", picWidth: 1080, picHeight: 859, title: "La Dorotea" },
         { picUrl: "../../assets/images/murals/la-muchacha-extremena.webp", picWidth:1080, picHeight: 1078, title: "La muchacha extremeña" },
-        { picUrl: "../../assets/images/murals/la-tomellosera-2.webp", picWidth: 1080, picHeight: 1073, title: "La muchacha tomellosera 2" },
-        { picUrl: "../../assets/images/murals/la-tomellosera-3.webp", picWidth: 1080, picHeight: 956, title: "La muchacha tomellosera 3" },
-        { picUrl: "../../assets/images/murals/la-tomellosera-4.webp", picWidth: 1080, picHeight: 1077, title: "La muchacha tomellosera 4" },
-        { picUrl: "../../assets/images/murals/la-tomellosera.webp", picWidth: 1080, picHeight: 1078, title: "La muchacha tomellosera" },
+        { picUrl: "../../assets/images/murals/la-tomellosera-2.webp", picWidth: 1080, picHeight: 1073, title: "La tomellosera 2" },
+        { picUrl: "../../assets/images/murals/la-tomellosera-3.webp", picWidth: 1080, picHeight: 956, title: "La tomellosera 3" },
+        { picUrl: "../../assets/images/murals/la-tomellosera-4.webp", picWidth: 1080, picHeight: 1077, title: "La tomellosera 4" },
+        { picUrl: "../../assets/images/murals/la-tomellosera.webp", picWidth: 1080, picHeight: 1078, title: "La tomellosera" },
         { picUrl: "../../assets/images/murals/las-cuatrillizas-de-socuellamos.webp", picWidth: 1080, picHeight: 1072, title: "Las cuatrillizas de socuéllamos" },
         { picUrl: "../../assets/images/murals/manchega-azafranera.webp", picWidth: 1080, picHeight: 1077, title: "Manchega azafranera" },
         { picUrl: "../../assets/images/murals/mi-bisabuelo-jesus-y-su-vecino-el-pelao.webp", picWidth: 1080, picHeight: 1077, title: "Mi bisabuela Jesús y su vecino \"El Pelao\"" },
@@ -66,6 +66,8 @@ export class CatalogoComponent implements OnInit {
         { picUrl: "../../assets/images/murals/recuerdos-por-valdepenas-3.webp", picWidth: 1080, picHeight: 1080, title: "Recuerdos por Valdepeñas 3" },
         { picUrl: "../../assets/images/murals/recuerdos-por-valdepenas-4.webp", picWidth: 1080, picHeight: 1074, title: "Recuerdos por Valdepeñas 4" },
         { picUrl: "../../assets/images/murals/recuerdos-por-valdepenas.webp", picWidth: 1080, picHeight: 1073, title: "Recuerdos por Valdepeñas" },
+        { picUrl: "../../assets/images/murals/huevos-fritos-con-puntilla-a-la-manchega-de-sara-montiel-1.webp", picWidth: 2312, picHeight: 3083, title: "Huevos fritos con puntilla a la manchega de Sara Montiel 1" },
+        { picUrl: "../../assets/images/murals/huevos-fritos-con-puntilla-a-la-manchega-de-sara-montiel-2.webp", picWidth: 2312, picHeight: 3083, title: "Huevos fritos con puntilla a la manchega de Sara Montiel 2" }
     ];
     // public currentContents: Painting[] = this.paintings;
     public currentContents: Painting[] = this.paintings;

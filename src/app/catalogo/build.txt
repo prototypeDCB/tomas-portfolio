@@ -1,0 +1,5 @@
+1) Compile
+ng build --prod --baseHref=https://tometomi.com --output-path=./docs
+2) Copy CNAME into ./docs
+3) Copy index.html, rename to 404.html
+4) commit to github

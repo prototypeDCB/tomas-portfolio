@@ -79,7 +79,7 @@ export class CatalogoComponent implements OnInit {
     public paintingCols: Painting[][];
     ngOnInit(): void {
 
-        // store the current number of cols to populate
+        // store the current number of columns to populate
         this.currentNumCols = this.getNumCols();
         // Fill cols with paintings
         this.setCols();

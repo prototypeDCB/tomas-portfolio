@@ -59,7 +59,7 @@ export class CatalogoComponent implements OnInit {
         { picUrl: "../../assets/images/murals/la-tomellosera.webp", picWidth: 1080, picHeight: 1078, title: "La tomellosera" },
         { picUrl: "../../assets/images/murals/las-cuatrillizas-de-socuellamos.webp", picWidth: 1080, picHeight: 1072, title: "Las cuatrillizas de socuéllamos" },
         { picUrl: "../../assets/images/murals/manchega-azafranera.webp", picWidth: 1080, picHeight: 1077, title: "Manchega azafranera" },
-        { picUrl: "../../assets/images/murals/mi-bisabuelo-jesus-y-su-vecino-el-pelao.webp", picWidth: 1080, picHeight: 1077, title: "Mi bisabuela Jesús y su vecino \"El Pelao\"" },
+        { picUrl: "../../assets/images/murals/mi-bisabuelo-jesus-y-su-vecino-el-pelao.webp", picWidth: 1080, picHeight: 1077, title: "Mi bisabuelo Jesús y su vecino \"El Pelao\"" },
         { picUrl: "../../assets/images/murals/muchachejos.webp", picWidth: 1080, picHeight: 1072, title: "Muchachejos" },
         { picUrl: "../../assets/images/murals/mujeres-ossenas-sobre-jota-del-garrote.webp", picWidth: 1080, picHeight: 1079, title: "Mujeres osseñas sobre jota del garrote" },
         { picUrl: "../../assets/images/murals/recuerdos-por-valdepenas-2.webp", picWidth: 1080, picHeight: 1078, title: "Recuerdos por Valdepeñas 2" },
